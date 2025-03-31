@@ -75,11 +75,11 @@ npm run dev
 <table style="width: 100%; text-align: center;">
   <tr>
     <td>
-      <img src="public/imgs/abraao.png" width="130px" alt="AS" /><br/>
+      <img src="public/imgs/abraao.png" width="150px" alt="AS" /><br/>
       <b>Abraão Santos</b>
     </td>
     <td>
-      <img src="public/imgs/leandro.png" width="120px" alt="LL" /><br/>
+      <img src="public/imgs/leandro.png" width="140px" alt="LL" /><br/>
       <b>Leandro Lopes</b>
     </td>
   </tr>
