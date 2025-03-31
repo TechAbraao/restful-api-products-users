@@ -56,7 +56,10 @@ Renomeie o arquivo `.env.example` para `.env` e edite as variáveis de ambiente 
 ```bash
 HOST=<HOST>
 PORT=<PORT>
-...
+HOST_DB=<HOST_DATABASE>
+USER_DB=<USER_DATABASE>
+PASSWORD_DB=<PASSWORD_DATABASE>
+DB_NAME=<DATABASE_NAME>
 ```
 
 ### 5️⃣ Inicie a aplicação
@@ -68,15 +71,16 @@ npm run dev
 ...
 
 ## 🎯 Equipe
-<table>
-<tr>
-<td align="center">
-<img src="public/imgs/abraao.png" width="130px" alt="React" /><br/>
-<b>Abraão Santos</b>
-</td>
-<td align="center">
-<img src="public/imgs/leandro.png" width="120px" alt="Tailwind" /><br/>
-<b>Leandro Lopes</b>
-</td>
-</tr>
+
+<table style="width: 100%; text-align: center;">
+  <tr>
+    <td>
+      <img src="public/imgs/abraao.png" width="130px" alt="AS" /><br/>
+      <b>Abraão Santos</b>
+    </td>
+    <td>
+      <img src="public/imgs/leandro.png" width="120px" alt="LL" /><br/>
+      <b>Leandro Lopes</b>
+    </td>
+  </tr>
 </table>
