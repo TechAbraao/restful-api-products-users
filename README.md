@@ -8,9 +8,9 @@
 </p>
 
 ## 📋 Sobre o projeto
-- O projeto foi elaborado como parte das aulas de Desenvolvimento Web II ministrado pelo <a href="https://github.com/faustinopsy">Prof. Rodrigo Faustini</a></li>
-- O projeto consiste em uma API RESTful para gerenciamento de produtos e usuários
-- Através da API, é possível cadastrar, atualizar, listar e excluir produtos (realizar um CRUD). Além disso, é possível o cadastro de usuários
+- O projeto foi desenvolvido como parte da disciplina de Desenvolvimento Web II, ministrado pelo <a href="https://github.com/faustinopsy">Prof. Rodrigo Faustini.</a></li>
+- Trata-se de uma API RESTful para o gerenciamento de produtos e usuários.
+- A API permite realizar operações de CRUD (criar, ler, atualizar e excluir) para produtos e também realizar o cadastro de usuários.
 
 ## 💡 Tecnologias
 
@@ -20,15 +20,17 @@
   <img alt="Static Badge" src="https://img.shields.io/badge/Express.js-black?style=for-the-badge&logo=Express&logoSize=60"> 
   <img alt="Static Badge" src="https://img.shields.io/badge/Nodemon-black?style=for-the-badge&logo=Nodemon&logoSize=60"> 
   <img alt="Static Badge" src="https://img.shields.io/badge/MySQL-black?style=for-the-badge&logo=mysql&logoSize=60">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Postman-black?style=for-the-badge&logo=postman&logoSize=60">
 </div>
 
 ## 📌 Como usar
 
 ### 🔧 Pré-requisitos
 
-- IDE de sua preferência
-- Conhecimento em JavaScript, Node.js e Express.js
-- Banco de dados MySQL
+- IDE de sua preferência.
+- Conhecimento em JavaScript, Node.js e Express.js.
+- Banco de dados MySQL.
+- Use o Postman para testar requisições HTTP, validar respostas e depurar a API de forma prática.
 
 ### 1️⃣ Clone o repositório
 
@@ -66,4 +68,15 @@ npm run dev
 ...
 
 ## 🎯 Equipe
-...
+<table>
+<tr>
+<td align="center">
+<img src="public/imgs/abraao.png" width="130px" alt="React" /><br/>
+<b>Abraão Santos</b>
+</td>
+<td align="center">
+<img src="public/imgs/leandro.png" width="120px" alt="Tailwind" /><br/>
+<b>Leandro Lopes</b>
+</td>
+</tr>
+</table>
