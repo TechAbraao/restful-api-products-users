@@ -1,0 +1,27 @@
+{
+  "name": "project-api-restful-products",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\"> 👨‍💻 API RESTful para Sistema de Gerenciamento de Produtos 👨‍💻 </h1>\r <p align=\"center\">\r   <a href=\"#\">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\r   <a href=\"#\">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\r   <a href=\"#\">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\r   <a href=\"#\">Endpoints</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\r   <a href=\"#\">Equipe</a>\r </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechAbraao/project-api-restful-products.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/TechAbraao/project-api-restful-products/issues"
+  },
+  "homepage": "https://github.com/TechAbraao/project-api-restful-products#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}

@@ -1,0 +1,21 @@
+node_modules/
+
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar logs
+*.log
+
+# Ignorar arquivos de IDE
+.idea/
+.vscode/
+
+# Ignorar arquivos de build
+dist/
+build/
+
+# Ignorar arquivos de sistema
+.DS_Store
+
+# Ignorar banco de dados
+database/
