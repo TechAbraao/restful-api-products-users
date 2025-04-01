@@ -12,4 +12,19 @@ productRoute.get("/produtos", async (req, res) => {
     }
 })
 
+productRoute.get("/produtos/:id", async (req, res) => {
+    try {
+        const id = parseInt(req.params.id)
+        const productById = await ProductDAO.productById(id)
+
+        if (!productById) {
+            return res.status(404).json({"mensagem": "Produto não encontrado."})
+        }
+
+        res.status(200).json(productById)
+    } catch (e) {
+        res.status(500).json({"mensagem": "Erro ao buscar produto através do id."})
+    }
+})
+
 export default productRoute

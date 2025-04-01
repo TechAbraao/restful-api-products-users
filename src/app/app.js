@@ -12,9 +12,10 @@ async function startServer() {
     try {
         await database
         await ProductDAO.createProductTables()
+        await ProductDAO.createMigrationsTable();
         await ProductDAO.insertingProductData()
         app.listen(PORT, HOST, () => {
-            console.log(`\n -> Servidor iniciou em: http://${HOST}:${PORT}/<end-point>`)
+            console.log(` -> Servidor iniciou em: http://${HOST}:${PORT}/<end-point>`)
         })
     } catch (error) {
         console.error(' -> Erro ao iniciar o servidor:', error)
