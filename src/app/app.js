@@ -6,7 +6,8 @@ import ProductDAO from './utils/ProductDAO.js'
 
 const app = express()
 
-app.use(router)
+app.use(express.json())
+app.use("/api", router)
 
 async function startServer() {
     try {

@@ -85,6 +85,33 @@ class ProductDAO {
         const [rows] = await database.query(query);
         return rows[0].count > 0; 
     }
+    // Adicionar novo produto na tabela
+    static async addingProduct(name, price, description, quantity, category) {
+        try {
+            const query = `INSERT INTO PRODUTO (NOME, PRECO, DESCRICAO, QUANTIDADE, CATEGORIA) VALUES (?, ?, ?, ?, ?)`
+            const [result] = await database.query(query, [name, price, description, quantity, category])
+
+            return result
+
+        } catch (e) {
+            console.error(` -> Erro ao adicionar produto no MySQL: ${e}`)
+        }
+    }
+    // Atualizar produto na tabela
+    static async updateProductById(id, name, price, description, quantity, category) {
+        try {
+            const query = `
+            UPDATE PRODUTO 
+            SET NOME = ?, PRECO = ?, DESCRICAO = ?, QUANTIDADE = ?, CATEGORIA = ?
+            WHERE ID = ?
+            `
+            const [result] = await database.query(query, [name, price, description, quantity, category, id])
+            return result
+        } catch (e) {
+            console.log(` -> Erro ao atualizar produto na tabela: ${e}`)
+            throw e;
+        }
+    }
 }
 
 export default ProductDAO;

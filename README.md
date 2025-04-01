@@ -1,4 +1,4 @@
-<h1 align="center"> 👨‍💻 API RESTful para Sistema de Gerenciamento de Produtos 👨‍💻 </h1>
+<h2 align="center"> 👨‍💻 API RESTful para Sistema de Gerenciamento de Produtos 👨‍💻 </h2>
 <p align="center">
   <a href="#">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -67,8 +67,11 @@ DB_NAME=<DATABASE_NAME>
 npm run dev
 ```
 
-## 🔌 Endpoints
-...
+## 🔌 Endpoints da API
+#### ✅ O que faz
+#### `Endpoint da API`
+##### Corpo da Requisição (JSON)
+
 
 ## 🎯 Equipe
 
