@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'; 
-import database from "../configs/database.js"; 
+import database from "../config/database.js"; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);   
@@ -110,6 +110,17 @@ class ProductDAO {
         } catch (e) {
             console.log(` -> Erro ao atualizar produto na tabela: ${e}`)
             throw e;
+        }
+    }
+    // Excluir produto da tabela
+    static async deleteProductById(id) {
+        try {
+            const query = `DELETE FROM PRODUTO WHERE ID = ?`;
+            const deletingProduct = await database.query(query, [id]);
+            
+            return deletingProduct;
+        } catch (e) {
+            console.error("Erro ao excluir produto.")
         }
     }
 }

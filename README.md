@@ -12,7 +12,7 @@
 - Trata-se de uma API RESTful para o gerenciamento de produtos e usuários.
 - A API permite realizar operações de CRUD (criar, ler, atualizar e excluir) para produtos e também realizar o cadastro de usuários.
 
-## 💡 Tecnologias
+## 💡 Tecnologias e Ferramentas
 
 <div align="center">
   <img alt="Static Badge" src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=JavaScript&logoSize=60"> 
@@ -69,7 +69,19 @@ npm run dev
 
 ## 🔌 Endpoints da API
 #### ✅ O que faz
-#### `Endpoint da API`
+#### `GET /api/produtos`
+##### Corpo da Requisição (JSON)
+
+#### ✅ O que faz
+#### `GET /api/produtos/:id`
+##### Corpo da Requisição (JSON)
+
+#### ✅ O que faz
+#### `POST /api/produtos`
+##### Corpo da Requisição (JSON)
+
+#### ✅ O que faz
+#### `PUT /api/produtos/:id`
 ##### Corpo da Requisição (JSON)
 
 

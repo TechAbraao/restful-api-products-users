@@ -64,10 +64,14 @@ productRoute.put("/produtos/:id", async (req, res) => {
 })
 
 // Remove PRODUTO do Banco de Dados a partir do ID
-productRoute.delete("/produtos/:id", (req, res) => {
-    //
+productRoute.delete("/produtos/:id", async (req, res) => {
+    const id = req.params.id;
+
+    if (!id) {
+        return res.status(400).json({"mensagem": "Erro ao excluir produto. Especifique o ID."})
+    }
+    await ProductDAO.deleteProductById(id)
+    res.status(200).json({"mensagem": `Produto de id = ${id} excluído com sucesso.`})
 })
-
-
 
 export default productRoute
