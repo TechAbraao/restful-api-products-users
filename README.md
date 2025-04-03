@@ -68,22 +68,36 @@ npm run dev
 ```
 
 ## 🔌 Endpoints da API
-#### ✅ O que faz
+
+#### ✅ Listar todos os produtos  
 #### `GET /api/produtos`
-##### Corpo da Requisição (JSON)
 
-#### ✅ O que faz
+#### ✅ Buscar produto pelo ID  
 #### `GET /api/produtos/:id`
-##### Corpo da Requisição (JSON)
 
-#### ✅ O que faz
+#### ✅ Adicionar um novo produto  
 #### `POST /api/produtos`
-##### Corpo da Requisição (JSON)
 
-#### ✅ O que faz
+#### ✅ Atualizar um produto existente  
 #### `PUT /api/produtos/:id`
-##### Corpo da Requisição (JSON)
 
+#### ✅ Excluir um produto pelo ID  
+#### `DELETE /api/produtos/:id`
+
+#### ✅ Listar todos os usuários  
+#### `GET /api/usuarios`
+
+#### ✅ Buscar usuário pelo ID  
+#### `GET /api/usuarios/:id`
+
+#### ✅ Adicionar um novo usuário  
+#### `POST /api/usuarios`
+
+#### ✅ Atualizar um usuário existente  
+#### `PUT /api/usuarios/:id`
+
+#### ✅ Excluir um usuário pelo ID  
+#### `DELETE /api/usuarios/:id`
 
 ## 🎯 Equipe
 
