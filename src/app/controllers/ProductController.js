@@ -46,14 +46,14 @@ class ProductController {
             if (preco <= 0) {
                 return res.status(400).json({"mensagem": "O preço deve ser um valor positivo maior que zero."})
             }
-            
+
             if (quantidade < 0) {
                 return res.status(400).json({"mensagem": "O estoque deve ter um valor maior ou igual a zero."})
             }
 
             await ProductDAO.addingProduct(nome, preco, descricao, quantidade, categoria)
     
-            res.status(200).json({"mensagem": "Produto adicionado com sucesso."})
+            res.status(201).json({"mensagem": "Produto adicionado com sucesso."})
     
         } catch (e) {
             console.error(`Erro ao adicionar novo produto: ${e}`)

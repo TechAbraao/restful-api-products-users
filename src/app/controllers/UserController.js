@@ -39,12 +39,21 @@ class UserController {
                 return res.status(400).json({"mensagem": "Preencha todos os campos."})
             }
             
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                return res.status(400).json({ "mensagem": "Informe um e-mail válido." });
+            }
+
+            if (senha.length <= 5) {
+                return res.status(400).json({"mensagem": "A senha deve ser maior ou igual 6 caracteres."})
+            }
+
             await UserDAO.addingUser(nome, email, senha)
 
-            res.status(200).json({"mensagem": "Usuário cadastrado com sucesso."})
+            res.status(201).json({"mensagem": "Usuário cadastrado com sucesso."})
         } catch (e) {
-            console.error(`Erro ao inserir novo usuário: ${e}`);
-            throw e;
+            console.error(`Erro ao INSERIR novo usuário: ${e}`);
+            return res.status(500).json({"mensagem": "Erro ao cadastrar um novo usuário."})
         }
     }
     static async putUsersById(req, res) {
