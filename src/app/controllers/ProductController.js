@@ -19,15 +19,21 @@ class ProductController {
     static async getProductsById(req, res) {
         try {
             const id = parseInt(req.params.id)
+
+            if (!id) { 
+                return res.status(400).json({"mensagem": "Preencha todos os campos."})
+            }
+
             const productById = await ProductDAO.productById(id)
     
             if (!productById) {
-                return res.status(404).json({"mensagem": "Produto não encontrado."})
+                return res.status(404).json({"mensagem": `Produto de id = ${id} não encontrado ou inexistente.`})
             }
     
             res.status(200).json(productById)
         } catch (e) {
-            res.status(500).json({"mensagem": "Erro ao buscar produto através do id."})
+            console.error(`Erro ao BUSCAR produto pelo ID: ${e}`)
+            return res.status(500).json({"mensagem": "Erro ao buscar produto através do id."})
         }
     }
     static async postProducts(req, res) {
@@ -81,7 +87,13 @@ class ProductController {
                 return res.status(400).json({"mensagem": "Erro ao excluir produto. Especifique o ID."})
             }
 
+            const findingId = await ProductDAO.productById(id)
+            if (!findingId) {
+                return res.status(400).json({"mensagem": "Produto não encontrado ou inexistente no banco de dados."})
+            }
+
             await ProductDAO.deleteProductById(id)
+
             res.status(200).json({"mensagem": `Produto de id = ${id} excluído com sucesso.`})
 
         } catch (e) {
