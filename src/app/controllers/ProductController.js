@@ -71,9 +71,17 @@ class ProductController {
             const id = req.params.id
             const { nome, preco, descricao, quantidade, categoria } = req.body;
 
+            if (preco <= 0) {
+                return res.status(400).json({"mensagem": "O produto deve ter um valor maior que zero."})
+            }
+
+            if (quantidade < 0) {
+                return res.status(400).json({"mensagem": "O estoque deve ser maior ou igual a zero."})
+            }
+
             await ProductDAO.updateProductById(id, nome, preco, descricao, quantidade, categoria)
 
-            res.status(200).json({"mensagem": `Produto atualizado com sucesso.`})
+            res.status(200).json({"mensagem": "Produto atualizado com sucesso."})
 
         } catch (e) {
             console.error(`Erro ao atualizar produto: ${e}`)
@@ -85,9 +93,9 @@ class ProductController {
 
             if (!id) {
                 return res.status(400).json({"mensagem": "Erro ao excluir produto. Especifique o ID."})
-            }
+            };
 
-            const findingId = await ProductDAO.productById(id)
+            const findingId = await ProductDAO.productById(id);
             if (!findingId) {
                 return res.status(400).json({"mensagem": "Produto não encontrado ou inexistente no banco de dados."})
             }
