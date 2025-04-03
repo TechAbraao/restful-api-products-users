@@ -8,9 +8,9 @@
 </p>
 
 ## 📋 Sobre o projeto
-- O projeto foi desenvolvido como parte da disciplina de Desenvolvimento Web II, ministrado pelo <a href="https://github.com/faustinopsy">Prof. Rodrigo Faustini.</a></li>
-- Trata-se de uma API RESTful para o gerenciamento de produtos e usuários.
-- A API permite realizar operações de CRUD (criar, ler, atualizar e excluir) para produtos e também realizar o cadastro de usuários.
+- Este projeto foi desenvolvido como parte da disciplina **Desenvolvimento Web II**, ministrada pelo <a href="https://github.com/faustinopsy">Prof. Rodrigo Faustini</a>.
+- Trata-se de uma **API RESTful** para gerenciamento de **produtos** e **usuários**.
+- A API permite realizar operações de **CRUD** (*Criar, Ler, Atualizar e Excluir*), tanto para produtos quanto para usuários.
 
 ## 💡 Tecnologias e Ferramentas
 
@@ -27,10 +27,10 @@
 
 ### 🔧 Pré-requisitos
 
-- IDE de sua preferência.
-- Conhecimento em JavaScript, Node.js e Express.js.
-- Banco de dados MySQL.
-- Use o Postman para testar requisições HTTP, validar respostas e depurar a API de forma prática.
+- IDE de sua preferência (VS Code, IntelliJ, etc.)  
+- Conhecimento básico em **JavaScript, Node.js e Express.js**  
+- Banco de dados **MySQL** configurado  
+- **Postman** para testar requisições HTTP  
 
 ### 1️⃣ Clone o repositório
 
@@ -67,37 +67,43 @@ DB_NAME=<DATABASE_NAME>
 npm run dev
 ```
 
-## 🔌 Endpoints da API
+# 🔌 Endpoints da API  
 
-#### ✅ Listar todos os produtos  
-#### `GET /api/produtos`
+## 📦 Produtos  
 
-#### ✅ Buscar produto pelo ID  
-#### `GET /api/produtos/:id`
+### Listar todos os produtos  
+- `GET /api/produtos`  
 
-#### ✅ Adicionar um novo produto  
-#### `POST /api/produtos`
+### Buscar produto pelo ID  
+- `GET /api/produtos/:id`  
 
-#### ✅ Atualizar um produto existente  
-#### `PUT /api/produtos/:id`
+### Adicionar um novo produto  
+- `POST /api/produtos`  
 
-#### ✅ Excluir um produto pelo ID  
-#### `DELETE /api/produtos/:id`
+### Atualizar um produto existente  
+- `PUT /api/produtos/:id`  
 
-#### ✅ Listar todos os usuários  
-#### `GET /api/usuarios`
+### Excluir um produto pelo ID  
+- `DELETE /api/produtos/:id`  
 
-#### ✅ Buscar usuário pelo ID  
-#### `GET /api/usuarios/:id`
+---  
 
-#### ✅ Adicionar um novo usuário  
-#### `POST /api/usuarios`
+## 👥 Usuários  
 
-#### ✅ Atualizar um usuário existente  
-#### `PUT /api/usuarios/:id`
+### Listar todos os usuários  
+- `GET /api/usuarios`  
 
-#### ✅ Excluir um usuário pelo ID  
-#### `DELETE /api/usuarios/:id`
+### Buscar usuário pelo ID  
+- `GET /api/usuarios/:id`  
+
+### Adicionar um novo usuário  
+- `POST /api/usuarios`  
+
+### Atualizar um usuário existente  
+- `PUT /api/usuarios/:id`  
+
+### Excluir um usuário pelo ID  
+- `DELETE /api/usuarios/:id`  
 
 ## 🎯 Equipe
 
