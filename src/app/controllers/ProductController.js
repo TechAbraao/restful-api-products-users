@@ -4,9 +4,16 @@ class ProductController {
     static async getProducts(req, res) {
         try {
             const allProducts = await ProductDAO.allProducts();
+
+            if (!allProducts || allProducts.length === 0) {
+                return res.status(404).json({"mensagem": "Nenhum produto encontrado."})
+            }
+
             res.status(200).json(allProducts)
+
         } catch (e) {
-            res.status(500).json({"mensagem": "Erro ao buscar todos os produtos."})
+            console.error(`Erro ao buscar TODOS os produtos: ${e}`);
+            return res.status(500).json({"mensagem": "Erro ao buscar TODOS os produtos."})
         }
     }
     static async getProductsById(req, res) {
@@ -31,13 +38,26 @@ class ProductController {
             if (!nome || !preco || !descricao || !quantidade || !categoria) {
                 return res.status(400).json({"mensagem": "Preencha todos os campos para enviar a requisição."})
             }
-    
+            
+            if (nome.length < 3) {
+                return res.status(400).json({"mensagem": "O nome do produto deve ter no mínimo 3 caracteres."})
+            }
+
+            if (preco <= 0) {
+                return res.status(400).json({"mensagem": "O preço deve ser um valor positivo maior que zero."})
+            }
+            
+            if (quantidade < 0) {
+                return res.status(400).json({"mensagem": "O estoque deve ter um valor maior ou igual a zero."})
+            }
+
             await ProductDAO.addingProduct(nome, preco, descricao, quantidade, categoria)
     
             res.status(200).json({"mensagem": "Produto adicionado com sucesso."})
     
         } catch (e) {
             console.error(`Erro ao adicionar novo produto: ${e}`)
+            throw e;
         }
     }
     static async putProductsById(req, res) {

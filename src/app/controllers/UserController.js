@@ -4,15 +4,22 @@ class UserController {
     static async getUsers(req, res) {
         try {
             const allUsers = await UserDAO.allUsers();
+
+            if (!allUsers || allUsers.length === 0) {
+                return res.status(404).json({"mensagem": "Nenhum usuário encontrado."})
+            }
+
             res.status(200).json(allUsers)
+
         } catch (e) {
-            console.error(`Erro ao listar todos os usuários: ${e}`);
-            throw e;
+            console.error(`Erro ao listar TODOS os usuários: ${e}`);
+            return res.status(500).json({"mensagem": "Erro ao buscar TODOS os usuários."})
         }
     }
     static async getUsersById(req, res) {
         try {
             const id = req.params.id
+
             if (!id) {
                 return res.status(400).json({"mensagem": "Preencha o ID."})
             }
@@ -30,11 +37,11 @@ class UserController {
             const { nome, email, senha } = req.body
             if (!nome || !email || !senha) {
                 return res.status(400).json({"mensagem": "Preencha todos os campos."})
-             }
-
+            }
+            
             await UserDAO.addingUser(nome, email, senha)
 
-            res.status(200).json({"mensagem": "Usuário adicionado com sucesso."})
+            res.status(200).json({"mensagem": "Usuário cadastrado com sucesso."})
         } catch (e) {
             console.error(`Erro ao inserir novo usuário: ${e}`);
             throw e;
