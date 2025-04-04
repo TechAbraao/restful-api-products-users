@@ -1,4 +1,4 @@
-<h2 align="center"> 👨‍💻 API RESTful para Sistema de Gerenciamento de Produtos 👨‍💻 </h2>
+<h2 align="center"> 👨‍💻 API RESTful para Sistema de Gerenciamento de Produtos e Usuários 👨‍💻 </h2>
 <p align="center">
   <a href="#">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
