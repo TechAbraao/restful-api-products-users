@@ -62,7 +62,6 @@ class UserController {
             if (!id) {
                 return res.status(400).json({"mensagem": "Preencha todos os campos."})
             };
-    
             await UserDAO.deleteUserById(id);
             res.status(200).json({"mensagem": `Usuário de ID = ${id} excluído com sucesso.`})
         } catch (e) {
