@@ -4,23 +4,36 @@ class ProductController {
     static async getProducts(req, res) {
         try {
             const allProducts = await ProductDAO.allProducts();
+
+            if (!allProducts || allProducts.length === 0) {
+                return res.status(404).json({"mensagem": "Nenhum produto encontrado."})
+            }
+
             res.status(200).json(allProducts)
+
         } catch (e) {
-            res.status(500).json({"mensagem": "Erro ao buscar todos os produtos."})
+            console.error(`Erro ao buscar TODOS os produtos: ${e}`);
+            return res.status(500).json({"mensagem": "Erro ao buscar TODOS os produtos."})
         }
     }
     static async getProductsById(req, res) {
         try {
             const id = parseInt(req.params.id)
+
+            if (!id) { 
+                return res.status(400).json({"mensagem": "Preencha todos os campos."})
+            }
+
             const productById = await ProductDAO.productById(id)
     
             if (!productById) {
-                return res.status(404).json({"mensagem": "Produto não encontrado."})
+                return res.status(404).json({"mensagem": `Produto de id = ${id} não encontrado ou inexistente.`})
             }
     
             res.status(200).json(productById)
         } catch (e) {
-            res.status(500).json({"mensagem": "Erro ao buscar produto através do id."})
+            console.error(`Erro ao BUSCAR produto pelo ID: ${e}`)
+            return res.status(500).json({"mensagem": "Erro ao buscar produto através do id."})
         }
     }
     static async postProducts(req, res) {
@@ -31,13 +44,26 @@ class ProductController {
             if (!nome || !preco || !descricao || !quantidade || !categoria) {
                 return res.status(400).json({"mensagem": "Preencha todos os campos para enviar a requisição."})
             }
-    
+            
+            if (nome.length < 3) {
+                return res.status(400).json({"mensagem": "O nome do produto deve ter no mínimo 3 caracteres."})
+            }
+
+            if (preco <= 0) {
+                return res.status(400).json({"mensagem": "O preço deve ser um valor positivo maior que zero."})
+            }
+
+            if (quantidade < 0) {
+                return res.status(400).json({"mensagem": "O estoque deve ter um valor maior ou igual a zero."})
+            }
+
             await ProductDAO.addingProduct(nome, preco, descricao, quantidade, categoria)
     
-            res.status(200).json({"mensagem": "Produto adicionado com sucesso."})
+            res.status(201).json({"mensagem": "Produto adicionado com sucesso."})
     
         } catch (e) {
             console.error(`Erro ao adicionar novo produto: ${e}`)
+            throw e;
         }
     }
     static async putProductsById(req, res) {
@@ -45,9 +71,17 @@ class ProductController {
             const id = req.params.id
             const { nome, preco, descricao, quantidade, categoria } = req.body;
 
+            if (preco <= 0) {
+                return res.status(400).json({"mensagem": "O produto deve ter um valor maior que zero."})
+            }
+
+            if (quantidade < 0) {
+                return res.status(400).json({"mensagem": "O estoque deve ser maior ou igual a zero."})
+            }
+
             await ProductDAO.updateProductById(id, nome, preco, descricao, quantidade, categoria)
 
-            res.status(200).json({"mensagem": `Produto atualizado com sucesso.`})
+            res.status(200).json({"mensagem": "Produto atualizado com sucesso."})
 
         } catch (e) {
             console.error(`Erro ao atualizar produto: ${e}`)
@@ -59,9 +93,15 @@ class ProductController {
 
             if (!id) {
                 return res.status(400).json({"mensagem": "Erro ao excluir produto. Especifique o ID."})
+            };
+
+            const findingId = await ProductDAO.productById(id);
+            if (!findingId) {
+                return res.status(400).json({"mensagem": "Produto não encontrado ou inexistente no banco de dados."})
             }
 
             await ProductDAO.deleteProductById(id)
+
             res.status(200).json({"mensagem": `Produto de id = ${id} excluído com sucesso.`})
 
         } catch (e) {

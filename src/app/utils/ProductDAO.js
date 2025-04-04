@@ -117,10 +117,12 @@ class ProductDAO {
         try {
             const query = `DELETE FROM PRODUTO WHERE ID = ?`;
             const deletingProduct = await database.query(query, [id]);
-            
-            return deletingProduct;
+
+            return deletingProduct || null;
+
         } catch (e) {
-            console.error("Erro ao excluir produto.")
+            console.error(`Erro ao excluir produto: ${e}`)
+            throw e;
         }
     }
 }
