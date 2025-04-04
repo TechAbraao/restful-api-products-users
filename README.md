@@ -27,7 +27,7 @@
 
 ### 🔧 Pré-requisitos
 
-- IDE de sua preferência (VS Code, IntelliJ, etc.)  
+- IDE de sua preferência (VS Code, WebStorm, etc.)  
 - Conhecimento básico em **JavaScript, Node.js e Express.js**  
 - Banco de dados **MySQL** configurado  
 - **Postman** para testar requisições HTTP  
