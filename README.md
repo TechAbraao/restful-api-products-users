@@ -8,7 +8,7 @@
 </p>
 
 ## 📋 Sobre o projeto
-- Este projeto foi desenvolvido como parte da disciplina **Desenvolvimento Web II**, ministrada pelo <a href="https://github.com/faustinopsy">Prof. Rodrigo Faustini</a>.
+- Este projeto foi desenvolvido como parte da disciplina **Desenvolvimento Web II**, ministrada pelo <a href="https://github.com/faustinopsy">Prof. Rodrigo Faustino</a>.
 - Trata-se de uma **API RESTful** para gerenciamento de **produtos** e **usuários**.
 - A API permite realizar operações de **CRUD** (*Criar, Ler, Atualizar e Excluir*), tanto para produtos quanto para usuários.
 
@@ -35,7 +35,7 @@
 ### 1️⃣ Clone o repositório
 
 ```bash
-git clone https://github.com/TechAbraao/project-api-restful-products.git
+git clone https://github.com/TechAbraao/project-api-restful-express.git
 ```
 
 ### 2️⃣ Entre no diretório do projeto
