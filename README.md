@@ -35,13 +35,13 @@
 ### 1️⃣ Clone o repositório
 
 ```bash
-git clone https://github.com/TechAbraao/project-api-restful-express.git
+git clone https://github.com/TechAbraao/restful-api-products-users.git
 ```
 
 ### 2️⃣ Entre no diretório do projeto
 
 ```bash
-cd project-api-restful-products
+cd restful-api-products-users
 ```
 
 ### 3️⃣ Instale todas as dependências
